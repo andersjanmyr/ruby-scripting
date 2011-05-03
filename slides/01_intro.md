@@ -7,9 +7,9 @@
 
 !SLIDE bullets
 # Contents
-* Script
-* String
-* FilePath
-* FileUtils
-* Array
-* Hash
+* Installation
+* Basic Script
+* Libraries
+  * String FilePath FileUtils Array Hash
+* Better Script
+
