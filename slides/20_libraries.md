@@ -80,6 +80,38 @@
     hash.map { |key, value| key+value } # ['foobar', 'tapirbeautiful']
 
 
+!SLIDE small
+# Pathname
+
+    @@@ruby
+    require 'pathname'
+    Pathname.getwd             # => #<Pathname:/Users/andersjanmyr/Presentations/ruby-scripting/src>
+    p1  = Pathname.new('/tmp') # => #<Pathname:/tmp>
+    p1.directory?              # => true
+    p2 = p1 + 'anders.txt'     # => #<Pathname:/tmp/anders.txt>
+    p2.dirname                 # => #<Pathname:/tmp>
+    p2.basename                # => #<Pathname:anders.txt>
+    p2.extname                 # => ".txt"
+    p2.mkpath                  # Creates the file unless it exists
+    p1.find { |f| p f.basename}# => #<Pathname:src> #<Pathname:one.rb> #<Pathname:read_char.rb>
 
 
+!SLIDE small
+# Pathname
+
+    @@@ruby
+    path = Pathname.getwd + 'read_char.rb'
+
+    # Opens file, yields each line, then closes it
+    path.each_line do |line|
+      p line if line =~ /print/
+    end
+    
+    # "print \"Character please=>\"\n"
+    # "print \"\\nYou pressed >\", int, \"<, char >\", int.chr, \"<\\n\"\n"
+
+!SLIDE small
+# Executing commands
+
+    @@@ruby
 
