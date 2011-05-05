@@ -1,13 +1,13 @@
 !SLIDE bullets small
 # Code and Slides
 
-## Code
-
-* http:://github.com/andersjanmyr/TODO CODE HERE 
-
 ## Presentation
 
-* http://github.com/andersjanmyr/TODO PRESENTATION HERE
+* http://andersjanmyr.github.com/ruby-scripting
+
+## Presentation Source
+
+* http:://github.com/andersjanmyr/ruby-scripting 
 
 
 !SLIDE
