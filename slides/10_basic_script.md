@@ -1,5 +1,5 @@
 !SLIDE code
-# A Basic Script
+# A basic script
 
     @@@ Ruby
     #!/usr/bin/env ruby

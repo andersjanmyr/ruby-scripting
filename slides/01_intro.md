@@ -9,7 +9,6 @@
 # Contents
 * Installation
 * Basic Script
-* Libraries
-  * String FilePath FileUtils Array Hash
-* Better Script
+* String, Array, Hash, FilePath, FileUtils
+* Task
 

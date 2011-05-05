@@ -36,7 +36,7 @@
 # String
 
     @@@ruby
-    # Double quotes string support interpolation
+    # Double quoted string support interpolation
     "Hello #{Date.now}"
 
     # Concatenation is also possible
@@ -70,13 +70,13 @@
 # Hash
 
     @@@ruby
-    hash = {} #Create a new Hash or Map
+    hash = {}                           # Create a new Hash or Map
 
-    hash['foo'] = 'bar' # Adds key 'foo' with value 'bar'
-    hash['foo'] # returns 'bar'
-    hash.size                 # 1
-    hash['tapir'] = 'beautiful' # Add one more 
-    hash.keys # returns ['foo', 'tapir']
+    hash['foo'] = 'bar'                 # Adds key 'foo' with value 'bar'
+    hash['foo']                         # returns 'bar'
+    hash.size                           # 1
+    hash['tapir'] = 'beautiful'         # Add one more
+    hash.keys                           # returns ['foo', 'tapir']
     hash.map { |key, value| key+value } # ['foobar', 'tapirbeautiful']
 
 
@@ -111,7 +111,55 @@
     # "print \"\\nYou pressed >\", int, \"<, char >\", int.chr, \"<\\n\"\n"
 
 !SLIDE small
+# FileUtils
+
+    @@@ruby
+    require 'fileutils'
+    cd(dir, options)
+    pwd()
+    mkdir_p(dir, options)
+    rmdir(dir, options)
+    ln(old, new, options)
+    ln_s(old, new, options)
+    cp(src, dest, options)
+    cp_r(src, dest, options)
+    mv(src, dest, options)
+    rm(list, options)
+    rm_r(list, options)
+    rm_rf(list, options)
+    chmod(mode, list, options)
+    chown(user, group, list, options)
+    touch(list, options)
+    
+!SLIDE small execute
 # Executing commands
 
     @@@ruby
+    # system, executes command and returns true on success
+    # Output is not captured
+    system('ls -f')
+
+    # backticks, executes command and captures stdout as string
+    `ls -f` 
+
+!SLIDE small
+# OptionParser
+
+    @@@ruby
+    # example.rb
+    require 'optparse'
+
+    options = {}
+    OptionParser.new do |opts|
+      opts.banner = "Usage: example.rb [options]"
+
+      opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
+        options[:verbose] = v
+      end
+    end.parse!
+
+    p options
+    p ARGV
+
+
 

@@ -1,12 +1,9 @@
-!SLIDE commandline
+!SLIDE bullets small
 # Installation
 
 * Install latest 1.9.2
 
-* OSX, Linux
-  * https://rvm.beginrescueend.com/
+* OSX, Linux - https://rvm.beginrescueend.com/
 
-* Windows
-  * http://rubyinstaller.org/
-  
+* Windows - http://rubyinstaller.org/ 
 

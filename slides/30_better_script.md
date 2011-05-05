@@ -1,4 +1,0 @@
-!SLIDE 
-# A Better Script
-
-
