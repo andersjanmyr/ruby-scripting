@@ -1,37 +1,3 @@
-!SLIDE 
-# Basics
-
-    @@@ruby
-    # local variable
-    name = 'Anders'
-    puts name
-
-!SLIDE 
-# Class
-
-    @@@ruby
-    # class
-    class Tapir
-    end
-
-!SLIDE 
-# Method
-
-    @@@ruby
-    # method, optional parenthesis
-    def eat food
-      puts "I'm eating #{food}"
-    end
-
-!SLIDE 
-# Instance variable
-
-    @@@ruby
-    def save(food)
-      # instance variable, created on assignment
-      @food = food
-    end
-
 !SLIDE
 # String
 
