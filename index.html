@@ -121,21 +121,21 @@ ville
 -p
 </code></code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="slides/20_libraries/1">
+</div><div class="slide" data-transition="none"><div class="content" ref="slides/10_basic_script/3">
 <h1>Basics</h1>
 
 <pre class="sh_ruby"><code># local variable
 name = 'Anders'
 puts name</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="slides/20_libraries/2">
+</div><div class="slide" data-transition="none"><div class="content" ref="slides/10_basic_script/4">
 <h1>Class</h1>
 
 <pre class="sh_ruby"><code># class
 class Tapir
 end</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="slides/20_libraries/3">
+</div><div class="slide" data-transition="none"><div class="content" ref="slides/10_basic_script/5">
 <h1>Method</h1>
 
 <pre class="sh_ruby"><code># method, optional parenthesis
@@ -143,7 +143,7 @@ def eat food
   puts "I'm eating #{food}"
 end</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="slides/20_libraries/4">
+</div><div class="slide" data-transition="none"><div class="content" ref="slides/10_basic_script/6">
 <h1>Instance variable</h1>
 
 <pre class="sh_ruby"><code>def save(food)
@@ -151,7 +151,34 @@ end</code></pre>
   @food = food
 end</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="slides/20_libraries/5">
+</div><div class="slide" data-transition="none"><div class="content small" ref="slides/10_basic_script/7">
+<h1>if else end</h1>
+
+<pre class="sh_ruby"><code>if ARGV.length &gt; 0
+  puts "We have #{ARGV.size} arguments"
+end
+
+# Statement modifier goes at the end
+return "We have #{ARGV.size} arguments" if ARGV.length &gt; 0
+
+if ARGV.length &gt; 0
+  puts "We have #{ARGV.size} arguments"
+else
+  puts 'We have no arguments'
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="slides/10_basic_script/8">
+<h1>Blocks (anonymous functions)</h1>
+
+<pre class="sh_ruby"><code># prints x : 0 x : 1 x : 2 x : 3 x : 4
+5.times { |x|  puts "x: #{x}"  }
+
+#=&gt; ["EN", "GLAD", "TAPIR"]
+%w(en glad tapir).map do |word|
+  word.toUpper
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="slides/20_libraries/1">
 <h1>String</h1>
 
 <pre class="sh_ruby"><code># Double quoted string support interpolation
@@ -160,7 +187,7 @@ end</code></pre>
 # Concatenation is also possible
 "Hello " + name</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/6">
+</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/2">
 <h1>String Methods</h1>
 
 <pre class="sh_ruby"><code>str = 'Tapir'
@@ -170,7 +197,7 @@ str.gsub(gsub(/[aeiou]/, '*') # T*p*r
 str.include? 'api'            # true
 str.size                      # 5</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/7">
+</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/3">
 <h1>Array</h1>
 
 <pre class="sh_ruby"><code>numbers = [1, 2, 3]
@@ -182,7 +209,7 @@ numbers.unshift 0           # mutates array into [0,1,2,3]
 numbers.each { |n| puts n } # prints 0 1 2 3
 numbers.map { |n| n*5}      # returns [0,5,10,15]</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/8">
+</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/4">
 <h1>Hash</h1>
 
 <pre class="sh_ruby"><code>hash = {}                           # Create a new Hash or Map
@@ -194,7 +221,7 @@ hash['tapir'] = 'beautiful'         # Add one more
 hash.keys                           # returns ['foo', 'tapir']
 hash.map { |key, value| key+value } # ['foobar', 'tapirbeautiful']</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/9">
+</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/5">
 <h1>Pathname</h1>
 
 <pre class="sh_ruby"><code>require 'pathname'
@@ -208,7 +235,7 @@ p2.extname                 # =&gt; ".txt"
 p2.mkpath                  # Creates the file unless it exists
 p1.find { |f| p f.basename}# =&gt; #&lt;Pathname:src&gt; #&lt;Pathname:one.rb&gt; #&lt;Pathname:read_char.rb&gt;</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/10">
+</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/6">
 <h1>Pathname</h1>
 
 <pre class="sh_ruby"><code>path = Pathname.getwd + 'read_char.rb'
@@ -221,7 +248,7 @@ end
 # "print \"Character please=&gt;\"\n"
 # "print \"\\nYou pressed &gt;\", int, \"&lt;, char &gt;\", int.chr, \"&lt;\\n\"\n"</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/11">
+</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/7">
 <h1>FileUtils</h1>
 
 <pre class="sh_ruby"><code>require 'fileutils'
@@ -241,7 +268,7 @@ chmod(mode, list, options)
 chown(user, group, list, options)
 touch(list, options)</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content small execute" ref="slides/20_libraries/12">
+</div><div class="slide" data-transition="none"><div class="content small execute" ref="slides/20_libraries/8">
 <h1>Executing commands</h1>
 
 <pre class="sh_ruby"><code># system, executes command and returns true on success
@@ -251,7 +278,7 @@ system('ls -f')
 # backticks, executes command and captures stdout as string
 `ls -f` </code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/13">
+</div><div class="slide" data-transition="none"><div class="content small" ref="slides/20_libraries/9">
 <h1>OptionParser</h1>
 
 <pre class="sh_ruby"><code># example.rb
